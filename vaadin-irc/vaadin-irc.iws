@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainApplication.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainApplication.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/MainApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="235" column="22" selection-start="6675" selection-end="6675" vertical-scroll-proportion="1.5386565">
+            <state line="179" column="25" selection-start="5083" selection-end="5083" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="4" selection-start="5575" selection-end="5575" vertical-scroll-proportion="0.0">
+            <state line="167" column="4" selection-start="5593" selection-end="5593" vertical-scroll-proportion="3.5982256">
               <folding />
             </state>
           </provider>
@@ -113,8 +113,8 @@
         <option value="$PROJECT_DIR$/src/main/java/conf.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/MyVaadinApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/start/StartServletContainer.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/MainApplication.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -579,13 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="4" selection-start="5575" selection-end="5575" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/MyVaadinApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="27" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
@@ -595,7 +588,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/MainApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="235" column="22" selection-start="6675" selection-end="6675" vertical-scroll-proportion="1.5386565">
+        <state line="179" column="25" selection-start="5083" selection-end="5083" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="4" selection-start="5593" selection-end="5593" vertical-scroll-proportion="3.5982256">
           <folding />
         </state>
       </provider>

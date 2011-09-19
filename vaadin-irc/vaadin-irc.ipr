@@ -281,6 +281,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.schwering:irclib:1.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/schwering/irclib/1.10/irclib-1.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/schwering/irclib/1.10/irclib-1.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/schwering/irclib/1.10/irclib-1.10-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.slf4j:jcl-over-slf4j:1.5.6">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar!/" />
