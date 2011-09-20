@@ -12,7 +12,11 @@
         <init-param>
             <description>Vaadin application class to start</description>
             <param-name>application</param-name>
-            <param-value>com.vk.vIRC.MyVaadinApplication</param-value>
+            <param-value>com.vk.vIRC.MainApplication</param-value>
+        </init-param>
+        <init-param>
+            <param-name>widgetset</param-name>
+            <param-value>com.vk.vIRC.widgetset.MyAppWidgetSet</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>

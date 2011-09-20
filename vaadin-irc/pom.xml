@@ -27,56 +27,65 @@
       </plugin>
 
       <!-- Compile custom GWT components or widget dependencies with the GWT compiler -->
-      <!--
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>gwt-maven-plugin</artifactId>
-        <version>${gwt.plugin.version}</version>
-        <configuration>
-          <webappDirectory>${project.build.directory}/${project.build.finalName}/VAADIN/widgetsets</webappDirectory>
-          <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
-          <runTarget>vaadin-irc</runTarget>
-          <hostedWebapp>${project.build.directory}/${project.build.finalName}</hostedWebapp>
-          <noServer>true</noServer>
-          <port>8080</port>
-          <compileReport>false</compileReport>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>resources</goal>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
-            <version>${gwt.version}</version>
-          </dependency>
-          <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
-            <version>${gwt.version}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-      <plugin>
-        <groupId>com.vaadin</groupId>
-        <artifactId>vaadin-maven-plugin</artifactId>
-        <version>1.0.2</version>
-        <executions>
-          <execution>
-            <configuration>
-            </configuration>
-            <goals>
-              <goal>update-widgetset</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      -->
+      <!--<plugin>-->
+        <!--<groupId>org.codehaus.mojo</groupId>-->
+        <!--<artifactId>gwt-maven-plugin</artifactId>-->
+        <!--<version>${gwt.plugin.version}</version>-->
+        <!--<configuration>-->
+          <!--&lt;!&ndash; if you don't specify any modules, the plugin will find them &ndash;&gt;-->
+          <!--<modules>-->
+            <!--&lt;!&ndash;<module>org.vaadin.artur.icepush.IcepushaddonWidgetset</module>&ndash;&gt;-->
+            <!--&lt;!&ndash;<module>com.vk.vIRC.widgetset.MyAppWidgetSet</module>&ndash;&gt;-->
+          <!--</modules>-->
+          <!--<webappDirectory>${project.build.directory}/${project.build.finalName}/VAADIN/widgetsets</webappDirectory>-->
+          <!--<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>-->
+          <!--<runTarget>vaadin-irc</runTarget>-->
+          <!--<hostedWebapp>${project.build.directory}/${project.build.finalName}</hostedWebapp>-->
+          <!--<noServer>true</noServer>-->
+          <!--<port>8080</port>-->
+          <!--<compileReport>false</compileReport>-->
+          <!--&lt;!&ndash;<compileSourcesArtifacts></compileSourcesArtifacts>&ndash;&gt;-->
+        <!--</configuration>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<goals>-->
+              <!--<goal>resources</goal>-->
+              <!--<goal>compile</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+        <!--<dependencies>-->
+          <!--<dependency>-->
+            <!--<groupId>com.google.gwt</groupId>-->
+            <!--<artifactId>gwt-dev</artifactId>-->
+            <!--<version>${gwt.version}</version>-->
+          <!--</dependency>-->
+          <!--<dependency>-->
+            <!--<groupId>com.google.gwt</groupId>-->
+            <!--<artifactId>gwt-user</artifactId>-->
+            <!--<version>${gwt.version}</version>-->
+          <!--</dependency>-->
+        <!--</dependencies>-->
+      <!--</plugin>-->
+      <!--<plugin>-->
+        <!--<groupId>com.vaadin</groupId>-->
+        <!--<artifactId>vaadin-maven-plugin</artifactId>-->
+        <!--<version>1.0.2</version>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<configuration>-->
+              <!--&lt;!&ndash; if you don't specify any modules, the plugin will find them &ndash;&gt;-->
+              <!--<modules>-->
+                <!--&lt;!&ndash;<module>org.vaadin.artur.icepush.IcepushaddonWidgetset</module>&ndash;&gt;-->
+                <!--&lt;!&ndash;<module>com.vk.vIRC.widgetset.MyAppWidgetSet</module>&ndash;&gt;-->
+              <!--</modules>-->
+            <!--</configuration>-->
+            <!--<goals>-->
+              <!--<goal>update-widgetset</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
 
       <!-- A simple Jetty test server at http://localhost:8080/vaadin-irc can be launched with the Maven goal jetty:run 
         and stopped with jetty:stop -->
@@ -100,6 +109,20 @@
           </webAppConfig>
         </configuration>
       </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+                <webResources>
+                    <resource>
+                        <targetPath>VAADIN</targetPath>
+                        <filtering>false</filtering>
+                        <directory>src/main/VAADIN</directory>
+                    </resource>
+                </webResources>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 
@@ -122,9 +145,16 @@
 	  <id>no-exist</id>
 	  <url>http://no-commons-logging.zapto.org/mvn2/</url>
 	</repository>
+    <repository>
+	  <id>openccdb.org:8081</id>
+	  <url>http://openccdb.org:8081/nexus/content/repositories/thirdparty/</url>
+	</repository>
+    <!--<repository>-->
+      <!--<id>evgeny-goldin</id>-->
+      <!--<url>http://evgeny-goldin.org/artifactory/libs-releases/</url>-->
+    <!--</repository>-->
   </repositories>
 
-  <!--
   <pluginRepositories>
     <pluginRepository>
       <id>codehaus-snapshots</id>
@@ -147,7 +177,6 @@
       </releases>
     </pluginRepository>
   </pluginRepositories>
-  -->
 
   <dependencies>
     <dependency>
@@ -165,6 +194,22 @@
       <artifactId>icepush</artifactId>
       <version>0.2.1</version>
     </dependency>
+    <!--https://vaadin.com/forum/-/message_boards/view_message/237325-->
+    <dependency>
+      <groupId>org.vaadin</groupId>
+	  <artifactId>icepush-gwt</artifactId>
+	  <version>0.1.2</version>
+    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.vaadin</groupId>-->
+	  <!--<artifactId>icepush</artifactId>-->
+	  <!--<version>0.1.2.1</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.vaadin</groupId>-->
+	  <!--<artifactId>icepush-util</artifactId>-->
+	  <!--<version>0.1.2</version>-->
+    <!--</dependency>-->
     <dependency>
       <groupId>org.schwering</groupId>
       <artifactId>irclib</artifactId>
