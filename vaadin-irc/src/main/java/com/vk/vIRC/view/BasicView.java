@@ -67,10 +67,22 @@ public class BasicView extends AbstractView {
 		menuBar_1.setImmediate(false);
 		absoluteLayout.addComponent(menuBar_1, "top:0.0px;left:0.0px;bottom:25.0px;");
 
-        // Save reference to individual items so we can add sub-menu items to
-        // them
+        // Save reference to individual items so we can add sub-menu items to them
         final MenuBar.MenuItem V_IRC = menuBar_1.addItem("V-IRC", null);
+          final MenuBar.MenuItem V_IRC_NETWORK_LIST = V_IRC.addItem("Network List", null);
+          final MenuBar.MenuItem V_IRC_NEW = V_IRC.addItem("New", null);
+            final MenuBar.MenuItem V_IRC_NEW_SERVER_TAB = V_IRC_NEW.addItem("Server Tab", null);
+            final MenuBar.MenuItem V_IRC_NEW_CHANNEL_TAB = V_IRC_NEW.addItem("Channel Tab", null);
+          final MenuBar.MenuItem V_IRC_CLOSE = V_IRC.addItem("Close", null);
         final MenuBar.MenuItem VIEW = menuBar_1.addItem("View", null);
+          final MenuBar.MenuItem VIEW_TOPIC_BAR = VIEW.addItem("Topic Bar", null);
+          final MenuBar.MenuItem VIEW_USER_LIST = VIEW.addItem("User List", null);
+          final MenuBar.MenuItem VIEW_USER_LIST_BUTTONS = VIEW.addItem("Userlist Buttons", null);
+          final MenuBar.MenuItem VIEW_MODE_BUTTONS = VIEW.addItem("Mode Buttons", null);
+          VIEW_TOPIC_BAR.setCheckable(true);
+          VIEW_USER_LIST.setCheckable(true);
+          VIEW_USER_LIST_BUTTONS.setCheckable(true);
+          VIEW_MODE_BUTTONS.setCheckable(true);
         final MenuBar.MenuItem SERVER = menuBar_1.addItem("Server", null);
         final MenuBar.MenuItem SETTINGS = menuBar_1.addItem("Settings", null);
         final MenuBar.MenuItem WINDOW = menuBar_1.addItem("Window", null);
