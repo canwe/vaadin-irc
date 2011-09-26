@@ -120,6 +120,11 @@
                         <filtering>false</filtering>
                         <directory>src/main/VAADIN</directory>
                     </resource>
+                    <resource>
+                        <targetPath>WEB-INF/lib</targetPath>
+                        <filtering>false</filtering>
+                        <directory>lib</directory>
+                    </resource>
                 </webResources>
             </configuration>
         </plugin>

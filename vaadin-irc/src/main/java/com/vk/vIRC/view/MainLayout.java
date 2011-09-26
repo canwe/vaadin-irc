@@ -13,10 +13,7 @@ public class MainLayout extends VerticalLayout {
 
 	private AbstractView currentView;
 
-
-	@SuppressWarnings("unchecked")
 	private final HashMap<Class, AbstractView> viewInstances = new HashMap<Class, AbstractView>();
-
 
 	private ProgressIndicator pi = null;
 
@@ -71,11 +68,18 @@ public class MainLayout extends VerticalLayout {
 		return currentView;
 	}
 
-	@SuppressWarnings("unchecked")
 	public AbstractView setCurrentView(Class clazz) {
-		AbstractView view = getAbstractView(clazz);
-		if (this.currentView != null) replaceComponent(this.currentView, view);
-		else addComponent(view);
+
+        AbstractView view = getAbstractView(clazz);
+
+        if (this.currentView != null)
+        {
+            replaceComponent(this.currentView, view);
+        }
+		else
+        {
+            addComponent(view);
+        }
 		setExpandRatio(view, 1);
 		this.currentView = view;
 		return view;
@@ -86,9 +90,8 @@ public class MainLayout extends VerticalLayout {
 
 	}
 
-	public void putView(Class clazz, AbstractView view) {
-		viewInstances.put(clazz, view);
-
+	public AbstractView putView(Class clazz, AbstractView view) {
+		return viewInstances.put(clazz, view);
 	}
 
 }

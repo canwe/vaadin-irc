@@ -70,10 +70,13 @@ public class BasicView extends AbstractView {
         // Save reference to individual items so we can add sub-menu items to them
         final MenuBar.MenuItem V_IRC = menuBar_1.addItem("V-IRC", null);
           final MenuBar.MenuItem V_IRC_NETWORK_LIST = V_IRC.addItem("Network List", null);
+          V_IRC.addSeparator();
           final MenuBar.MenuItem V_IRC_NEW = V_IRC.addItem("New", null);
             final MenuBar.MenuItem V_IRC_NEW_SERVER_TAB = V_IRC_NEW.addItem("Server Tab", null);
             final MenuBar.MenuItem V_IRC_NEW_CHANNEL_TAB = V_IRC_NEW.addItem("Channel Tab", null);
+          V_IRC.addSeparator();
           final MenuBar.MenuItem V_IRC_CLOSE = V_IRC.addItem("Close", null);
+
         final MenuBar.MenuItem VIEW = menuBar_1.addItem("View", null);
           final MenuBar.MenuItem VIEW_TOPIC_BAR = VIEW.addItem("Topic Bar", null);
           final MenuBar.MenuItem VIEW_USER_LIST = VIEW.addItem("User List", null);
@@ -83,9 +86,26 @@ public class BasicView extends AbstractView {
           VIEW_USER_LIST.setCheckable(true);
           VIEW_USER_LIST_BUTTONS.setCheckable(true);
           VIEW_MODE_BUTTONS.setCheckable(true);
+
         final MenuBar.MenuItem SERVER = menuBar_1.addItem("Server", null);
+          final MenuBar.MenuItem SERVER_DISCONNECT = SERVER.addItem("Disconnect", null);
+          final MenuBar.MenuItem SERVER_RECONNECT = SERVER.addItem("Reconnect", null);
+          final MenuBar.MenuItem SERVER_JOIN_A_CHANNEL = SERVER.addItem("Join a Channel", null);
+          final MenuBar.MenuItem SERVER_LIST_OF_CHANNELS = SERVER.addItem("List of Channels", null);
+          SERVER.addSeparator();
+          final MenuBar.MenuItem SERVER_MARK_AS_AWAY = SERVER.addItem("Mark as \"Away\"", null);
+
         final MenuBar.MenuItem SETTINGS = menuBar_1.addItem("Settings", null);
+        SETTINGS.setEnabled(false);
+
         final MenuBar.MenuItem WINDOW = menuBar_1.addItem("Window", null);
+          final MenuBar.MenuItem WINDOW_BAN_LIST = WINDOW.addItem("Ban  List", null);
+          final MenuBar.MenuItem WINDOW_FRIENDS_LIST = WINDOW.addItem("Friends  List", null);
+          final MenuBar.MenuItem WINDOW_IGNORE_LIST = WINDOW.addItem("Ignore  List", null);
+          WINDOW.addSeparator();
+          final MenuBar.MenuItem WINDOW_CLEAR = WINDOW.addItem("Clear", null);
+          final MenuBar.MenuItem WINDOW_SAVE_TEXT = WINDOW.addItem("Save Text", null);
+
         final MenuBar.MenuItem HELP = menuBar_1.addItem("Help", null);
 
 

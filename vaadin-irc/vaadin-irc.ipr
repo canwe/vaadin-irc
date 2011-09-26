@@ -347,6 +347,14 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/vaadin/icepush-gwt/0.1.2/icepush-gwt-0.1.2-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="third-party">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+    </library>
   </component>
 </project>
 

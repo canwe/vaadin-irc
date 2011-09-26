@@ -9,6 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="third-party" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:vaadin:6.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty:6.1.24" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.24" level="project" />
