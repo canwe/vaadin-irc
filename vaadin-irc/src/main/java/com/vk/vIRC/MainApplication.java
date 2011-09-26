@@ -54,6 +54,7 @@ public class MainApplication
 
 	@Override
 	public void init() {
+        PropertiesInitializer.initialize();
 		mainWindow = new Window("Vaadin");
 		synchLock = new ReentrantLock();
 		setMainWindow(mainWindow);
