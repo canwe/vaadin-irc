@@ -48,13 +48,15 @@ public class MainApplication
 
 	private String remoteAddress = "unknown";
 
+    private Properties properties;
+
 	//private TimeOutCheckerThread checkerThread;
 
 	private ICEPush pusher = new ICEPush();
 
 	@Override
 	public void init() {
-        PropertiesInitializer.initialize();
+        properties = new Properties().initialize();
 		mainWindow = new Window("Vaadin");
 		synchLock = new ReentrantLock();
 		setMainWindow(mainWindow);
@@ -251,8 +253,11 @@ public class MainApplication
 		return remoteAddress;
 	}
 
+    public Properties getProperties() {
+        return properties;
+    }
 
-	private class TimeOutCheckerThread implements Runnable{
+    private class TimeOutCheckerThread implements Runnable {
 
 		private boolean isRunning;
 
