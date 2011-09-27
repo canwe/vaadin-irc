@@ -21,6 +21,51 @@ public class Properties {
 
     private final String CONNECTION = "jdbc:sqlite:server.db";
 
+    public Boolean booleanValue(String key) {
+        Boolean value = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        try {
+            conn = DriverManager.getConnection(CONNECTION);
+            Statement stat = conn.createStatement();
+            rs = stat.executeQuery("SELECT " + key + " " +
+                                   "FROM '" + TABLE_NAME + "';");
+            while (rs.next()) {
+                value = rs.getBoolean(key);
+            }
+        } catch (SQLException sqlEx) {
+            //;
+        } finally {
+            try {
+                if (null != rs) rs.close();
+                if (null != conn) conn.close();
+            } catch (Exception e) {
+                //;
+            }
+        }
+        return value;
+    }
+
+    public boolean VIEW_TOPIC_BAR() {
+        Boolean value = booleanValue("VIEW_TOPIC_BAR");
+        return value != null ? value : false;
+    }
+
+    public boolean VIEW_USER_LIST() {
+        Boolean value = booleanValue("VIEW_USER_LIST");
+        return value != null ? value : false;
+    }
+
+    public boolean VIEW_USER_LIST_BUTTONS() {
+        Boolean value = booleanValue("VIEW_USER_LIST_BUTTONS");
+        return value != null ? value : false;
+    }
+
+    public boolean VIEW_MODE_BUTTONS() {
+        Boolean value = booleanValue("VIEW_MODE_BUTTONS");
+        return value != null ? value : false;
+    }
+
     public Properties initialize() {
 
         Connection conn = null;
@@ -29,7 +74,6 @@ public class Properties {
             Class.forName("org.sqlite.JDBC");
 
             boolean tableExist = tableExist(TABLE_NAME);
-            System.out.println(tableExist);
 
             conn = DriverManager.getConnection(CONNECTION);
             conn.setAutoCommit(false);
