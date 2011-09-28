@@ -3,6 +3,7 @@ package com.vk.vIRC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.UUID;
 
@@ -15,11 +16,13 @@ public class Properties {
     /** log. */
 	private final Logger log = LoggerFactory.getLogger(Properties.class);
 
-    private final UUID uuid = UUID.randomUUID();
+    private final UUID   uuid            = UUID.randomUUID();
 
-    private final String TABLE_NAME = "properties" + uuid.toString();
+    private final String TABLE_NAME      = "properties" + uuid.toString();
 
-    private final String CONNECTION = "jdbc:sqlite:server.db";
+    private final String DATABASE_NAME   = "server.db";
+
+    private final String CONNECTION      = "jdbc:sqlite:" + DATABASE_NAME;
 
     public Boolean booleanValue(String key) {
         Boolean value = null;
@@ -46,23 +49,8 @@ public class Properties {
         return value;
     }
 
-    public boolean VIEW_TOPIC_BAR() {
-        Boolean value = booleanValue("VIEW_TOPIC_BAR");
-        return value != null ? value : false;
-    }
-
-    public boolean VIEW_USER_LIST() {
-        Boolean value = booleanValue("VIEW_USER_LIST");
-        return value != null ? value : false;
-    }
-
-    public boolean VIEW_USER_LIST_BUTTONS() {
-        Boolean value = booleanValue("VIEW_USER_LIST_BUTTONS");
-        return value != null ? value : false;
-    }
-
-    public boolean VIEW_MODE_BUTTONS() {
-        Boolean value = booleanValue("VIEW_MODE_BUTTONS");
+    public boolean isChecked(String prop) {
+        Boolean value = booleanValue(prop);
         return value != null ? value : false;
     }
 
@@ -79,28 +67,32 @@ public class Properties {
             conn.setAutoCommit(false);
 
             Statement stat = conn.createStatement();
+            Field[] predefinedFields = PredefinedProperties.class.getDeclaredFields();
+            int l = predefinedFields.length;
+
             if (!tableExist) {
                 stat.executeUpdate("drop table if exists '" + TABLE_NAME +"';");
-                stat.executeUpdate("create table '" + TABLE_NAME + "' (" +
-                                   "  VIEW_TOPIC_BAR, " +
-                                   "  VIEW_USER_LIST," +
-                                   "  VIEW_USER_LIST_BUTTONS," +
-                                   "  VIEW_MODE_BUTTONS" +
-                                   ");");
+                StringBuilder s = new StringBuilder();
+                for (int i = 1; i <= l; s = i < l ? s.append(predefinedFields[i - 1].getName()).append(", ") : s.append(predefinedFields[i - 1].getName()), i++) {}
+                System.out.println(s);
+                stat.executeUpdate("create table '" + TABLE_NAME + "' (" + s + ");");
             }
 
+            StringBuilder s1 = new StringBuilder();
+            for (int i = 1; i <= l; s1 = i < l ? s1.append("?, ") : s1.append("?"), i++) {}
+            PreparedStatement prep = conn.prepareStatement("insert into '" + TABLE_NAME + "' values (" + s1 + ");");
 
-            PreparedStatement prep = conn.prepareStatement("insert into '" + TABLE_NAME + "' values (" +
-                                                           "  ?, " +
-                                                           "  ?, " +
-                                                           "  ?, " +
-                                                           "  ?" +
-                                                           ");");
+            final PredefinedProperties pp = new PredefinedProperties();
+            final Class<? extends PredefinedProperties> ppClass = pp.getClass();
+            for (int i = 1; i <= l; i++) {
+                Field f = predefinedFields[i - 1];
+                if (f.getType().equals(Boolean.TYPE) || f.getType().equals(Boolean.class)) {
+                    setProperty(prep, i, ppClass.getDeclaredMethod("is" + f.getName()).invoke(pp), f.getType());
+                } else {
+                    setProperty(prep, i, ppClass.getDeclaredMethod("get" + f.getName()).invoke(pp), f.getType());
+                }
+            }
 
-            prep.setBoolean(1, true);
-            prep.setBoolean(2, true);
-            prep.setBoolean(3, false);
-            prep.setBoolean(4, false);
             prep.addBatch();
             prep.executeBatch();
 
@@ -132,7 +124,7 @@ public class Properties {
         try {
             while (rs.next()) {
                 exist = tableName.equals(rs.getString("name"));
-                if (exist) break; else continue;
+                if (exist) break;
             }
         } catch (SQLException sqlEx) {
             System.out.println(sqlEx);
@@ -140,6 +132,7 @@ public class Properties {
         } finally {
             rs.close();
             conn.close();
+            stat.close();
         }
         return exist;
     }
@@ -155,8 +148,72 @@ public class Properties {
             System.out.println("VIEW_USER_LIST_BUTTONS = " + rs.getBoolean("VIEW_USER_LIST_BUTTONS"));
             System.out.println("VIEW_MODE_BUTTONS = " + rs.getBoolean("VIEW_MODE_BUTTONS"));
         }
+        stat.close();
         rs.close();
         conn.close();
+    }
+
+    private <T> void  setProperty(PreparedStatement prep,
+                                  int index,
+                                  Object value,
+                                  Class<T> valueType) throws SQLException {
+
+        if (value != null) {
+            if (valueType.isPrimitive()) {
+                if (valueType.equals(Integer.TYPE)) {
+                    prep.setInt(index, (Integer) value);
+                } else if (valueType.equals(Long.TYPE)) {
+                    prep.setLong(index, (Long) value);
+                } else if (valueType.equals(Short.TYPE)) {
+                    prep.setShort(index, (Short) value);
+                } else if (valueType.equals(Character.TYPE)) {
+                    prep.setByte(index, (Byte) value);
+                } else if (valueType.equals(Byte.TYPE)) {
+                    prep.setByte(index, (Byte) value);
+                } else if (valueType.equals(Float.TYPE)) {
+                    prep.setFloat(index, (Float) value);
+                } else if (valueType.equals(Double.TYPE)) {
+                    prep.setDouble(index, (Double) value);
+                } else if (valueType.equals(Boolean.TYPE)) {
+                    prep.setBoolean(index, (Boolean) value);
+                } else {
+                    throw new RuntimeException("Could not set element with unknown type " + valueType);
+                }
+            } else {
+                if (valueType.isAssignableFrom(java.sql.Array.class)) {
+                    prep.setArray(index, (java.sql.Array) value);
+                } else {
+                    prep.setObject(index, value);
+                }
+            }
+        }
+    }
+
+    /**
+     * Java bean holds all predefined options
+     */
+    public static class PredefinedProperties {
+
+        private boolean VIEW_TOPIC_BAR           = true;
+        private boolean VIEW_USER_LIST           = true;
+        private boolean VIEW_USER_LIST_BUTTONS   = false;
+        private boolean VIEW_MODE_BUTTONS        = false;
+
+        public boolean isVIEW_TOPIC_BAR() {
+            return VIEW_TOPIC_BAR;
+        }
+
+        public boolean isVIEW_USER_LIST() {
+            return VIEW_USER_LIST;
+        }
+
+        public boolean isVIEW_USER_LIST_BUTTONS() {
+            return VIEW_USER_LIST_BUTTONS;
+        }
+
+        public boolean isVIEW_MODE_BUTTONS() {
+            return VIEW_MODE_BUTTONS;
+        }
     }
 
 }

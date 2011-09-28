@@ -86,10 +86,10 @@ public class BasicView extends AbstractView {
           final MenuBar.MenuItem VIEW_USER_LIST = VIEW.addItem("User List", null);
           final MenuBar.MenuItem VIEW_USER_LIST_BUTTONS = VIEW.addItem("Userlist Buttons", null);
           final MenuBar.MenuItem VIEW_MODE_BUTTONS = VIEW.addItem("Mode Buttons", null);
-          VIEW_TOPIC_BAR.setCheckable(true); VIEW_TOPIC_BAR.setChecked(properties.VIEW_TOPIC_BAR());
-          VIEW_USER_LIST.setCheckable(true); VIEW_USER_LIST.setChecked(properties.VIEW_USER_LIST());
-          VIEW_USER_LIST_BUTTONS.setCheckable(true); VIEW_USER_LIST_BUTTONS.setChecked(properties.VIEW_USER_LIST_BUTTONS());
-          VIEW_MODE_BUTTONS.setCheckable(true); VIEW_MODE_BUTTONS.setChecked(properties.VIEW_MODE_BUTTONS());
+          VIEW_TOPIC_BAR.setCheckable(true); VIEW_TOPIC_BAR.setChecked(properties.isChecked("VIEW_TOPIC_BAR"));
+          VIEW_USER_LIST.setCheckable(true); VIEW_USER_LIST.setChecked(properties.isChecked("VIEW_USER_LIST"));
+          VIEW_USER_LIST_BUTTONS.setCheckable(true); VIEW_USER_LIST_BUTTONS.setChecked(properties.isChecked("VIEW_USER_LIST_BUTTONS"));
+          VIEW_MODE_BUTTONS.setCheckable(true); VIEW_MODE_BUTTONS.setChecked(properties.isChecked("VIEW_MODE_BUTTONS"));
 
         final MenuBar.MenuItem SERVER = menuBar_1.addItem("Server", null);
           final MenuBar.MenuItem SERVER_DISCONNECT = SERVER.addItem("Disconnect", null);
