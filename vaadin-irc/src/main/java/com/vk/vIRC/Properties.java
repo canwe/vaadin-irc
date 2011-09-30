@@ -74,7 +74,6 @@ public class Properties {
                 stat.executeUpdate("drop table if exists '" + TABLE_NAME +"';");
                 StringBuilder s = new StringBuilder();
                 for (int i = 1; i <= l; s = i < l ? s.append(predefinedFields[i - 1].getName()).append(", ") : s.append(predefinedFields[i - 1].getName()), i++) {}
-                System.out.println(s);
                 stat.executeUpdate("create table '" + TABLE_NAME + "' (" + s + ");");
             }
 
