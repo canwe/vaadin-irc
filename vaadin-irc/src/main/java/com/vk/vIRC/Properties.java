@@ -1,5 +1,6 @@
 package com.vk.vIRC;
 
+import com.vk.pool.JDCConnectionDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +19,7 @@ import java.util.UUID;
 public class Properties {
 
     /** log. */
-	private final Logger log = LoggerFactory.getLogger(Properties.class);
+	private static final Logger log = LoggerFactory.getLogger(Properties.class);
 
     private final UUID   uuid               = UUID.randomUUID();
 
@@ -28,16 +29,30 @@ public class Properties {
 
     private final String SERVERS_TABLE_NAME = "servers";
 
-    private final String DATABASE_NAME      = "server.db";
+    private static final String DATABASE_NAME      = "server.db";
 
-    private final String CONNECTION         = "jdbc:sqlite:" + DATABASE_NAME;
+    private static final String CONNECTION         = "jdbc:sqlite:" + DATABASE_NAME;
+
+    public Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(CONNECTION);
+    }
+
+    static {
+        try {
+            new JDCConnectionDriver("org.sqlite.JDBC", CONNECTION, "", "");
+            log.info("New pool created successfully.");
+        } catch (Exception e) {
+            log.error("New pool error", e);
+        }
+    }
+
 
     public Boolean booleanValue(String key) {
         Boolean value = null;
         Connection conn = null;
         ResultSet rs = null;
         try {
-            conn = DriverManager.getConnection(CONNECTION);
+            conn = getConnection();
             Statement stat = conn.createStatement();
             rs = stat.executeQuery("SELECT " + key + " " +
                                    "FROM '" + TABLE_NAME + "';");
@@ -69,7 +84,7 @@ public class Properties {
 
             boolean tableExist = tableExist(NETWORS_TABLE_NAME);
 
-            conn = DriverManager.getConnection(CONNECTION);
+            conn = getConnection();
             conn.setAutoCommit(false);
 
             if (!tableExist) {
@@ -114,7 +129,7 @@ public class Properties {
 
             boolean tableExist = tableExist(SERVERS_TABLE_NAME);
 
-            conn = DriverManager.getConnection(CONNECTION);
+            conn = getConnection();
             conn.setAutoCommit(false);
 
             if (!tableExist) {
@@ -166,14 +181,13 @@ public class Properties {
         Connection conn = null;
 
         try {
-            Class.forName("org.sqlite.JDBC");
 
             initializeNetworks();
             initializeServers();
 
             boolean tableExist = tableExist(TABLE_NAME);
 
-            conn = DriverManager.getConnection(CONNECTION);
+            conn = getConnection();
             conn.setAutoCommit(false);
 
             Statement stat = conn.createStatement();
@@ -224,7 +238,7 @@ public class Properties {
     //http://stackoverflow.com/questions/1601151/how-do-i-check-in-sqlite-whether-a-table-exists
     private boolean tableExist(final String tableName) throws Exception {
         boolean exist = false;
-        Connection conn = DriverManager.getConnection(CONNECTION);
+        Connection conn = getConnection();
         Statement stat = conn.createStatement();
         ResultSet rs = stat.executeQuery("SELECT name " +
                                          "FROM sqlite_master " +
@@ -236,7 +250,7 @@ public class Properties {
                 if (exist) break;
             }
         } catch (SQLException sqlEx) {
-            System.out.println(sqlEx);
+            log.error("", sqlEx);
             exist = false;
         } finally {
             rs.close();
@@ -247,8 +261,8 @@ public class Properties {
     }
 
     private void checkIntegrity() throws Exception {
-        System.out.println(TABLE_NAME);
-        Connection conn = DriverManager.getConnection(CONNECTION);
+        log.info(TABLE_NAME);
+        Connection conn = getConnection();
         Statement stat = conn.createStatement();
         ResultSet rs = stat.executeQuery("select * from '" + TABLE_NAME + "';");
         dumpData(rs, new BufferedWriter(new PrintWriter(System.out)));

@@ -59,19 +59,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainApplication.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/MainApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="43" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Properties.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/Properties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="0" selection-start="4936" selection-end="4936" vertical-scroll-proportion="2.9679077">
+            <state line="252" column="0" selection-start="8496" selection-end="8496" vertical-scroll-proportion="5.499358">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,19 +70,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/BasicView.java">
+      <file leaf-file-name="JDCConnection.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="116" selection-start="3962" selection-end="3962" vertical-scroll-proportion="0.0">
+            <state line="14" column="11" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainLayout.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/MainLayout.java">
+      <file leaf-file-name="JDCConnectionDriver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnectionDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="21" selection-start="1821" selection-end="1821" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JDCConnectionPool.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnectionPool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="20" selection-start="2139" selection-end="2139" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,9 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/conf.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/conf.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/MyVaadinApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/start/StartServletContainer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/client/IRCClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/GeneralDialog.java" />
@@ -152,6 +151,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/PropertiesInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/MainApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/BasicView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnectionPool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vk/pool/SQLiteConnectionDriver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnectionDriver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/Properties.java" />
       </list>
     </option>
@@ -200,8 +203,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -282,6 +286,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="vIRC" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -308,17 +316,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vIRC" />
+              <option name="myItemId" value="vk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaadin-irc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaadin-irc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -335,9 +352,9 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Maven.jetty:run-war">
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -706,7 +723,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1288" height="979" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -716,9 +733,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14111923" sideWeight="0.4958184" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14355232" sideWeight="0.67144567" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23600973" sideWeight="0.4958184" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26358476" sideWeight="0.67144567" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5041816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -765,34 +782,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/MyVaadinApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="39" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/lang/reflect/Method.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="570" column="18" selection-start="22740" selection-end="22740" vertical-scroll-proportion="0.33144477" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/conf.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/MainApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="43" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/lang/reflect/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="892" column="26" selection-start="37287" selection-end="37287" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2987" column="13" selection-start="119928" selection-end="119928" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/BasicView.java">
@@ -807,56 +799,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="50" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="50" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="61" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="61" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/widgetset/MyAppWidgetSet.gwt.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
+        <state line="11" column="0" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/sqlitejdbc-v056.jar!/org/sqlite/SQLite.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="19" selection-start="154" selection-end="154" vertical-scroll-proportion="0.11548913">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/io/Writer.java">
+    <entry file="jar://$PROJECT_DIR$/lib/sqlitejdbc-v056.jar!/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="24" selection-start="731" selection-end="731" vertical-scroll-proportion="0.20454545">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/GeneralDialog.java">
+    <entry file="jar://$PROJECT_DIR$/lib/sqlitejdbc-v056.jar!/org/sqlite/JDBC.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="393" selection-end="393" vertical-scroll-proportion="0.17171717">
+        <state line="20" column="31" selection-start="767" selection-end="767" vertical-scroll-proportion="0.4509284">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/sql/PreparedStatement.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="466" column="9" selection-start="22451" selection-end="22451" vertical-scroll-proportion="0.33247754">
+        <state line="14" column="11" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/VAADIN/widgetsets/com.vk.vIRC.widgetset.MyAppWidgetSet/3075A970AB58294D5C4626249B555503.cache.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1347" column="30" selection-start="32322" selection-end="32322" vertical-scroll-proportion="0.35146442">
+        <state line="82" column="20" selection-start="2139" selection-end="2139" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/sql/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="15" selection-start="2366" selection-end="2366" vertical-scroll-proportion="0.33243242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnectionDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/start/StartServletContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="40" selection-start="639" selection-end="639" vertical-scroll-proportion="0.37098846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/sql/DriverManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="581" column="0" selection-start="19902" selection-end="19902" vertical-scroll-proportion="0.15275995">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/Properties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="0" selection-start="4936" selection-end="4936" vertical-scroll-proportion="2.9679077">
+        <state line="252" column="0" selection-start="8496" selection-end="8496" vertical-scroll-proportion="5.499358">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
