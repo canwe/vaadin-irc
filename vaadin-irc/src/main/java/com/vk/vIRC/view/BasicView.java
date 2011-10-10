@@ -73,7 +73,7 @@ public class BasicView extends AbstractView {
 
         // Save reference to individual items so we can add sub-menu items to them
         final MenuBar.MenuItem V_IRC = menuBar_1.addItem("V-IRC", null);
-          final MenuBar.MenuItem V_IRC_NETWORK_LIST = V_IRC.addItem("Network List", null);
+          final MenuBar.MenuItem V_IRC_NETWORK_LIST = V_IRC.addItem("Network List", new NetworkListCommand(this));
           V_IRC.addSeparator();
           final MenuBar.MenuItem V_IRC_NEW = V_IRC.addItem("New", null);
             final MenuBar.MenuItem V_IRC_NEW_SERVER_TAB = V_IRC_NEW.addItem("Server Tab", null);
