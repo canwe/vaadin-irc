@@ -100,7 +100,7 @@ public class Properties {
             PreparedStatement prep = null;
 
             NetworkList netList = new NetworkList();
-            for (String s : netList.get()) {
+            for (String s : NetworkList.get()) {
                 prep = conn.prepareStatement("insert into '" + NETWORS_TABLE_NAME + "' values (?, ?);");
                 prep.setString(1, s);
                 prep.setBoolean(2, false);
@@ -145,11 +145,9 @@ public class Properties {
 
             PreparedStatement prep = null;
 
-            ServerList serverList = new ServerList();
-            NetworkList netList = new NetworkList();
-            List<String> list = netList.get();
+            List<String> list = NetworkList.get();
             int i = 0;
-            for (String[] ss : serverList.get()) {
+            for (String[] ss : ServerList.get()) {
                 String networkName = list.get(i);
                 for (String addr : ss) {
                     prep = conn.prepareStatement("insert into '" + SERVERS_TABLE_NAME + "' values (?, ?, ?);");
@@ -361,9 +359,10 @@ public class Properties {
 
     public static class NetworkList {
 
-        private List<String> list = new ArrayList<String>(76);
+        private static List<String> list = new ArrayList<String>(76);
 
-        public synchronized List<String> get() {
+        public static synchronized List<String> get() {
+            if (list.size() == 76) return list;
             list.clear();
             list.add("2600net");
             list.add("AccessIRC");
@@ -448,9 +447,10 @@ public class Properties {
 
     public static class ServerList {
 
-        private List<String[]> list = new ArrayList<String[]>(76);
+        private static List<String[]> list = new ArrayList<String[]>(76);
 
-        public synchronized List<String[]> get() {
+        public static synchronized List<String[]> get() {
+            if (list.size() == 76) return list;
             list.clear();
             list.add(new String[]{"irc.2600.net"});//list.add("2600net");
             list.add(new String[]{"irc.accessirc.net", "eu.accessirc.net"});//list.add("AccessIRC");

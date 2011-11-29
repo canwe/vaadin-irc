@@ -1,7 +1,10 @@
 package com.vk.vIRC.view;
 
+import com.vaadin.terminal.Terminal;
+import com.vaadin.ui.ComponentContainer;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.Window;
+import com.vaadin.ui.themes.Reindeer;
 
 /**
  * @author victor.konopelko
@@ -24,11 +27,15 @@ public class NetworkListCommand implements MenuBar.Command {
         mywindow.setPositionY(100);
         mywindow.setResizable(true);
         mywindow.setClosable(true);
-        mywindow.setWidth("350px");
-        mywindow.setHeight("480px");
-        mywindow.setModal(false);
+        mywindow.setWidth("420px");
+        mywindow.setHeight("495px");
+        mywindow.setModal(true);
+        mywindow.setDraggable(true);
 
-        mywindow.addComponent(new NetworkListView());
+        ComponentContainer componentContainer = mywindow.getContent();
+        componentContainer.setWidth("390px");
+        componentContainer.setHeight("440px");
+        componentContainer.addComponent(new NetworkListView());
 
         mainview.getWindow().addWindow(mywindow);
     }
