@@ -6,10 +6,7 @@ import com.vaadin.terminal.Sizeable;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
 
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * @author victor.konopelko
@@ -200,8 +197,7 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
         layout3.setSizeFull();
         layout3.addComponent(p1);
         layout3.addComponent(p2);
-        layout3.setImmediate(true
-        );
+        layout3.setImmediate(true);
         layout3.setExpandRatio(p1, 1.0f);
         Panel p3 = new Panel();
         p3.setCaption("Networks");
@@ -231,9 +227,11 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
     public static class NetworkItem implements Comparable<NetworkItem> {
 
         private String networkName;
+        private String[] servers;
 
-        private NetworkItem(String networkName) {
+        public NetworkItem(String networkName, String[] servers) {
             this.networkName = networkName;
+            this.servers = servers;
         }
 
         public String getNetworkName() {
@@ -242,6 +240,14 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
 
         public void setNetworkName(String networkName) {
             this.networkName = networkName;
+        }
+
+        public String[] getServers() {
+            return servers;
+        }
+
+        public void setServers(String[] servers) {
+            this.servers = servers;
         }
 
         @Override
@@ -254,12 +260,12 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
         public NetworkContainer() throws IllegalArgumentException {
             super(NetworkItem.class);
 
-            final List<String> networks = com.vk.vIRC.Properties.NetworkList.get();
+            Map<String, String[]> networksMap = com.vk.vIRC.Properties.Networks.networks();
 
             addNestedContainerProperty("networkName");
 
-            for (String s : networks) {
-                addItem(new NetworkItem(s));
+            for (Map.Entry<String, String[]> e : networksMap.entrySet()) {
+                addItem(new NetworkItem(e.getKey(), e.getValue()));
             }
         }
 

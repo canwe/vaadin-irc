@@ -16,7 +16,7 @@ public class NetworkListCommand implements MenuBar.Command {
     private AbstractView mainview;
 
     public NetworkListCommand(AbstractView main) {
-        mainview = main;
+        this.mainview = main;
     }
 
     @Override

@@ -8,9 +8,7 @@ import java.io.BufferedWriter;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * @author victor.konopelko
@@ -357,7 +355,7 @@ public class Properties {
         }
     }
 
-    public static class NetworkList {
+    private static class NetworkList {
 
         private static List<String> list = new ArrayList<String>(76);
 
@@ -445,7 +443,19 @@ public class Properties {
 
     }
 
-    public static class ServerList {
+    public static class Networks {
+        public static synchronized Map<String, String[]> networks() {
+            List<String> networkList = NetworkList.get();
+            List<String[]> serverList = ServerList.get();
+            Map<String, String[]> networks = new HashMap<String, String[]>(76);
+            for (int i = 0; i < 76; i++) {
+                networks.put(networkList.get(i), serverList.get(i));
+            }
+            return networks;
+        }
+    }
+
+    private static class ServerList {
 
         private static List<String[]> list = new ArrayList<String[]>(76);
 

@@ -67,43 +67,34 @@
       <file leaf-file-name="NetworkListView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NetworkListView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="174" column="23" selection-start="5548" selection-end="5548" vertical-scroll-proportion="0.72025317">
+            <state line="35" column="24" selection-start="802" selection-end="802" vertical-scroll-proportion="0.6240506">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BeanItemContainer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/BeanItemContainer.java">
+      <file leaf-file-name="BasicView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/BasicView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="225" column="24" selection-start="7903" selection-end="7903" vertical-scroll-proportion="0.0">
+            <state line="81" column="98" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractBeanContainer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6.jar!/com/vaadin/data/util/AbstractBeanContainer.java">
+      <file leaf-file-name="NewChannelTabCommand.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NewChannelTabCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="489" column="33" selection-start="15165" selection-end="15165" vertical-scroll-proportion="0.0">
+            <state line="6" column="33" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="String.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/lang/String.java">
+      <file leaf-file-name="NewServerTabCommand.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NewServerTabCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="19" selection-start="3608" selection-end="3608" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractBeanContainer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/AbstractBeanContainer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="785" column="0" selection-start="25361" selection-end="25361" vertical-scroll-proportion="0.0">
+            <state line="12" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,38 +102,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NestedPropertyDescriptor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/NestedPropertyDescriptor.java">
+      <file leaf-file-name="Properties.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/Properties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0">
+            <state line="462" column="29" selection-start="15733" selection-end="15733" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NestedMethodProperty.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/NestedMethodProperty.java">
+      <file leaf-file-name="ServersAndChannelsTree.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/tree/ServersAndChannelsTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="0" selection-start="4450" selection-end="4450" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractInMemoryContainer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/AbstractInMemoryContainer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="566" column="28" selection-start="19738" selection-end="19738" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NetworkListCommand.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NetworkListCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="52" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="61" column="61" selection-start="1656" selection-end="1656" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,8 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/GeneralDialog.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/AbstractView.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/widgetset/MyAppWidgetSet.gwt.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/MainLayout.java" />
@@ -173,9 +146,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/pool/SQLiteConnectionDriver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/pool/JDCConnectionDriver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/BasicView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/Properties.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/tree/ServersAndChannelsTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NetworkListCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NewServerTabCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/BasicView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NetworkListView.java" />
       </list>
     </option>
@@ -240,6 +215,7 @@
     <panes>
       <pane id="Favorites" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -387,10 +363,51 @@
               <option name="myItemId" value="vk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vIRC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaadin-irc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaadin-irc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -407,9 +424,9 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Maven.jetty:run-war">
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -837,116 +854,102 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/ui/GridLayout.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="16" selection-start="5608" selection-end="5608" vertical-scroll-proportion="0.3329114">
-          <folding />
-        </state>
+        <state line="1604" column="0" selection-start="66498" selection-end="66498" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/ContainerOrderedWrapper.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/BeanItemContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="190" column="16" selection-start="5708" selection-end="5708" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="225" column="24" selection-start="7903" selection-end="7903" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/DefaultItemSorter.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6.jar!/com/vaadin/data/util/AbstractBeanContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="11" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="489" column="33" selection-start="15165" selection-end="15165" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6.jar!/com/vaadin/data/util/ItemSorter.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="9" selection-start="2103" selection-end="2103" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="91" column="19" selection-start="3608" selection-end="3608" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/Container.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/AbstractBeanContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="0" selection-start="3588" selection-end="3588" vertical-scroll-proportion="-10.2">
-          <folding />
-        </state>
+        <state line="785" column="0" selection-start="25361" selection-end="25361" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/NestedPropertyDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/NestedMethodProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="0" selection-start="4450" selection-end="4450" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/AbstractInMemoryContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="566" column="28" selection-start="19738" selection-end="19738" vertical-scroll-proportion="0.0">
+        <state line="566" column="28" selection-start="19738" selection-end="19738" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/ui/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="792" column="19" selection-start="24868" selection-end="24868" vertical-scroll-proportion="0.3329208">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="462" column="29" selection-start="15733" selection-end="15733" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NewChannelTabCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="33" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NetworkListCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="52" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0">
+        <state line="18" column="13" selection-start="486" selection-end="486" vertical-scroll-proportion="0.30126584">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/BeanItemContainer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/tree/ServersAndChannelsTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="24" selection-start="7903" selection-end="7903" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6.jar!/com/vaadin/data/util/AbstractBeanContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="489" column="33" selection-start="15165" selection-end="15165" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/AbstractBeanContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="785" column="0" selection-start="25361" selection-end="25361" vertical-scroll-proportion="0.0">
+        <state line="61" column="61" selection-start="1656" selection-end="1656" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/NestedPropertyDescriptor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NewServerTabCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="12" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin/6.6.6/vaadin-6.6.6-sources.jar!/com/vaadin/data/util/NestedMethodProperty.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/BasicView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="0" selection-start="4450" selection-end="4450" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/lang/AbstractStringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1416" column="17" selection-start="56119" selection-end="56119" vertical-scroll-proportion="4.090909">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1604" column="0" selection-start="66498" selection-end="66498" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_20/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="19" selection-start="3608" selection-end="3608" vertical-scroll-proportion="0.0">
+        <state line="81" column="98" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vk/vIRC/view/NetworkListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="23" selection-start="5548" selection-end="5548" vertical-scroll-proportion="0.72025317">
+        <state line="35" column="24" selection-start="802" selection-end="802" vertical-scroll-proportion="0.6240506">
           <folding />
         </state>
       </provider>
