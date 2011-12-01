@@ -80,7 +80,7 @@ public class BasicView extends AbstractView {
           V_IRC.addSeparator();
           final MenuBar.MenuItem V_IRC_NEW = V_IRC.addItem("New", null);
             final MenuBar.MenuItem V_IRC_NEW_SERVER_TAB = V_IRC_NEW.addItem("Server Tab", new NewServerTabCommand(this));
-            final MenuBar.MenuItem V_IRC_NEW_CHANNEL_TAB = V_IRC_NEW.addItem("Channel Tab", null);
+            final MenuBar.MenuItem V_IRC_NEW_CHANNEL_TAB = V_IRC_NEW.addItem("Channel Tab", new NewChannelTabCommand(this));
           V_IRC.addSeparator();
           final MenuBar.MenuItem V_IRC_CLOSE = V_IRC.addItem("Close", null);
 

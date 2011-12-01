@@ -6,8 +6,6 @@ import com.vaadin.ui.AbstractSelect;
 import com.vaadin.ui.Tree;
 import com.vk.vIRC.view.NetworkListView;
 
-import java.util.Map;
-
 /**
  * @author victor.konopelko
  *         Date: 30.11.11
@@ -15,17 +13,18 @@ import java.util.Map;
 public class ServersAndChannelsTree extends Tree {
 
     /**
-	 * Feld <code>serialVersionUID</code>.
+	 * Field <code>serialVersionUID</code>.
 	 */
 	private final static long   serialVersionUID = 1L;
 
 	private final static String CAPTION_PROPERTY = "CAPTION";
 
     public final  static  String ROOT_CAPTION = "Servers";
+
     public final Object ROOT_ID;
 
     /**
-     * Konstruktor fьr NavigationTree.
+     * Constructor NavigationTree.
      */
     public ServersAndChannelsTree() {
 
@@ -51,11 +50,17 @@ public class ServersAndChannelsTree extends Tree {
          * We want the user to be able to de-select an item.
          */
         setNullSelectionAllowed(true);
+
+        /*
+         * We want the user to be able to select more than one item.
+         */
+        setMultiSelect(false);
     }
 
     /**
      * Adds server tab for given tree with specified options
      *
+     * @param server server
      * @return id of the item in tree
      */
     public synchronized Object addServerTab(NetworkListView.NetworkItem server) {
@@ -65,10 +70,33 @@ public class ServersAndChannelsTree extends Tree {
     /**
      * Adds channel tab for given tree with specified options
      *
+     * @param serverId - parent server id in tree
+     * @param name - name of the channel
      * @return id of the item in tree
      */
     public synchronized Object addChannelTab(Object serverId, String name) {
         return addCaptionedItem(this, name, serverId, false);
+    }
+
+    /**
+     * Adds channel tab for given tree with specified options
+     *
+     * @param name - the name of the channel
+     * @return id of the item in tree
+     */
+    public synchronized Object addChannelTab(String name) {
+
+        // find selected server tab
+        Object itemId = this.getValue();
+
+        // if tried to add channel to root of the tree
+        if (null == itemId || ROOT_ID.equals(itemId)) return null;
+
+        if (ROOT_ID.equals(this.getParent(itemId))) {
+            return addChannelTab(itemId, name);
+        } else {
+            return addChannelTab(this.getParent(itemId), name);
+        }
     }
 
     /**
