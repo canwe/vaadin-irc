@@ -154,6 +154,10 @@
 	  <id>openccdb.org:8081</id>
 	  <url>http://openccdb.org:8081/nexus/content/repositories/thirdparty/</url>
 	</repository>
+    <repository>
+        <id>anonsvn.icefaces</id>
+        <url>http://anonsvn.icefaces.org/repo/maven2/releases/</url>
+    </repository>
     <!--<repository>-->
       <!--<id>evgeny-goldin</id>-->
       <!--<url>http://evgeny-goldin.org/artifactory/libs-releases/</url>-->
@@ -198,6 +202,11 @@
       <groupId>org.vaadin.addons</groupId>
       <artifactId>icepush</artifactId>
       <version>0.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.icepush</groupId>
+      <artifactId>icepush</artifactId>
+      <version>2.0.2</version>
     </dependency>
     <!--https://vaadin.com/forum/-/message_boards/view_message/237325-->
     <dependency>

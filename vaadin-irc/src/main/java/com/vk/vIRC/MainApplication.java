@@ -7,6 +7,7 @@ import com.vaadin.terminal.ParameterHandler;
 import com.vaadin.terminal.Terminal;
 import com.vaadin.terminal.URIHandler;
 import com.vaadin.ui.Window;
+import com.vk.vIRC.client.IRCClient;
 import com.vk.vIRC.view.AbstractView;
 import com.vk.vIRC.view.BasicView;
 import com.vk.vIRC.view.MainLayout;
@@ -38,7 +39,7 @@ public class MainApplication
 	// Main layout contains all the components and views
 	private MainLayout mainLayout;
 
-	//private IRCClient ircClient = null;
+	private IRCClient ircClient = null;
 
 	private int defaultDCCSendPort = 10027;
 
@@ -219,18 +220,17 @@ public class MainApplication
 		//ircClient = null;
 	}
 
-//	public IRCClient getIrcClientRef() {
-//		return ircClient;
-//	}
-//
-//	public void setIrcClientRef(IRCClient ircClient)
-//	throws DisconnectFirstException {
-//		if (this.ircClient != null && this.ircClient.isConnected()) {
-//			throw new DisconnectFirstException(
-//					"You must disconnect before you can connect to a new server!");
-//		}
-//		this.ircClient = ircClient;
-//	}
+	public IRCClient getIrcClientRef() {
+		return ircClient;
+	}
+
+	public void setIrcClientRef(IRCClient ircClient)
+	throws DisconnectFirstException {
+		if (this.ircClient != null && this.ircClient.isConnected()) {
+			throw new DisconnectFirstException("You must disconnect before you can connect to a new server!");
+		}
+		this.ircClient = ircClient;
+	}
 
 	public void clearMainLayoutViewMap() {
 		mainLayout.clearViewMap();

@@ -13,9 +13,9 @@ import com.vaadin.ui.themes.Reindeer;
 public class NetworkListCommand implements MenuBar.Command {
 
     private Window mywindow;    // The window to be opened
-    private AbstractView mainview;
+    private BasicView mainview;
 
-    public NetworkListCommand(AbstractView main) {
+    public NetworkListCommand(BasicView main) {
         this.mainview = main;
     }
 
@@ -35,7 +35,7 @@ public class NetworkListCommand implements MenuBar.Command {
         ComponentContainer componentContainer = mywindow.getContent();
         componentContainer.setWidth("390px");
         componentContainer.setHeight("440px");
-        componentContainer.addComponent(new NetworkListView());
+        componentContainer.addComponent(new NetworkListView(mainview));
 
         mainview.getWindow().addWindow(mywindow);
     }

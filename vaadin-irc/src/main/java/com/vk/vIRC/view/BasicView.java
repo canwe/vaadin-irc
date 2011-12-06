@@ -24,6 +24,7 @@ public class BasicView extends AbstractView {
 	private MenuBar menuBar_1;
 
     private ServersAndChannelsTree navTree;
+    private VerticalLayout         rightLayout;
 
     private com.vk.vIRC.Properties properties;
 
@@ -124,21 +125,27 @@ public class BasicView extends AbstractView {
         absoluteLayout.addComponent(horiz, "top:25.0px;left:0.0px;");
 
         VerticalLayout left = new VerticalLayout();
-        VerticalLayout right = new VerticalLayout();
+        rightLayout = new VerticalLayout();
         // left component:
         horiz.setFirstComponent(left);
         this.navTree = new ServersAndChannelsTree();
         left.addComponent(navTree);
 
         // right component:
-        horiz.setSecondComponent(right);
-        right.addComponent(new Label(brownFox));
+        horiz.setSecondComponent(rightLayout);
+        rightLayout.setWidth(100, Sizeable.UNITS_PERCENTAGE);
+        rightLayout.setHeight(100, Sizeable.UNITS_PERCENTAGE);
+        rightLayout.addComponent(new Label(brownFox));
 
 		return absoluteLayout;
 	}
 
     public ServersAndChannelsTree getNavTree() {
         return navTree;
+    }
+
+    public VerticalLayout getRightLayout() {
+        return rightLayout;
     }
 
     @Override

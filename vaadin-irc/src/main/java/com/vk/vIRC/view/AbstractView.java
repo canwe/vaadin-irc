@@ -8,7 +8,7 @@ import java.util.Properties;
 
 import com.vaadin.ui.CustomComponent;
 
-public abstract class AbstractView extends CustomComponent{
+public abstract class AbstractView extends CustomComponent {
 
 	public AbstractView() {
 

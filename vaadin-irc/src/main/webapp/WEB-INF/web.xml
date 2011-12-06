@@ -7,8 +7,8 @@
         <param-value>false</param-value>
     </context-param>
     <servlet>
-        <servlet-name>Vaadin Application Servlet</servlet-name>
-        <servlet-class>com.vaadin.terminal.gwt.server.ApplicationServlet</servlet-class>
+        <servlet-name>VIRC</servlet-name>
+        <servlet-class>org.vaadin.artur.icepush.ICEPushServlet</servlet-class>
         <init-param>
             <description>Vaadin application class to start</description>
             <param-name>application</param-name>
@@ -20,7 +20,16 @@
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Vaadin Application Servlet</servlet-name>
-        <url-pattern>/*</url-pattern>
-    </servlet-mapping>
+		<servlet-name>VIRC</servlet-name>
+		<url-pattern>/VIRC/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>VIRC</servlet-name>
+		<url-pattern>/VAADIN/*</url-pattern>
+	</servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>VIRC</servlet-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</servlet-mapping>-->
 </web-app>

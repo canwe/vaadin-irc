@@ -5,7 +5,12 @@ import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.terminal.Sizeable;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
+import com.vk.vIRC.DisconnectFirstException;
+import com.vk.vIRC.MainApplication;
+import com.vk.vIRC.client.IRCClient;
+import com.vk.vIRC.view.irc.IRCView;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -17,10 +22,13 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
 
     private VerticalLayout mainLayout;
     private VerticalLayout verticalLayout;
+    private ListSelect networkListSelect;
+    private BasicView mainview;
 
-    public NetworkListView() {
+    public NetworkListView(BasicView main) {
 
         super();
+        this.mainview = main;
         buildMainLayout();
         setCompositionRoot(mainLayout);
 
@@ -82,8 +90,12 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
         layout.setHeight(120, Sizeable.UNITS_PIXELS);
 
         TextField nick1 = new TextField("Nick:");
+        nick1.setRequired(true);
+        nick1.setImmediate(true);
         layout.addComponent(nick1);
         TextField nick2 = new TextField("Second choice:");
+        nick2.setRequired(true);
+        nick2.setImmediate(true);
         layout.addComponent(nick2);
 
         Panel p = new Panel();
@@ -106,6 +118,48 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
 
         Button close = new Button("Close");
         Button connect = new Button("Connect");
+        connect.addListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                Object value = networkListSelect.getValue();
+                if (null == value) return;
+                NetworkItem selectedItem = (NetworkItem) value;
+
+                try {
+                    mainview.getRightLayout().removeAllComponents();
+                    MainApplication.getCurrent().getMainLayout().putView(IRCView.class, new IRCView());
+                    mainview.getRightLayout().addComponent(MainApplication.getCurrent().getMainLayout().getAbstractView(IRCView.class));
+
+                    MainApplication.getCurrent().setIrcClientRef(
+                            new IRCClient(
+                                    "irc.chatjunkies.org",
+                                    6667,
+                                    "075561",
+                                    "gnusmas",
+                                    "gnusmas",
+                                    "gnusmas",
+                                    false,
+                                    (IRCView) MainApplication.getCurrent().getMainLayout().getAbstractView(IRCView.class),
+                                    MainApplication.getCurrent().getSynchObject(),
+                                    "UTF-8")
+                    );
+
+                    IRCView ircView = (IRCView) MainApplication.getCurrent().getMainLayout().getAbstractView(IRCView.class);
+                    Properties props = new Properties();
+                    props.put("smileys_on", "false");
+                    props.put("colors_on", "false");
+                    props.put("favchans", "#xchat");
+                    ircView.setParameters(props);
+                } catch (DisconnectFirstException e) {
+                    //this.getWindow().showNotification("Disconnect first!");
+                    e.printStackTrace(); // TODO!
+                } catch (IOException ioe) {
+                    ioe.printStackTrace(); // TODO!
+                } catch (NumberFormatException nfe) {
+                    nfe.printStackTrace();
+                }
+            }
+        });
 
         layout.addComponent(close);
         layout.setComponentAlignment(close, Alignment.MIDDLE_LEFT);
@@ -127,18 +181,18 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
         layout1.setSpacing(true);
         layout1.setImmediate(true);
 
-        final ListSelect networkSelect = new ListSelect("", new NetworkContainer());
-        networkSelect.setNullSelectionAllowed(false); // user can not 'unselect'
-        networkSelect.setMultiSelect(false);
-        networkSelect.setRows(10);
-        networkSelect.setWidth(100, Sizeable.UNITS_PERCENTAGE);
-        //networkSelect.select(networks.get(0)); // select this by default
-        networkSelect.setImmediate(true); // send the change to the server at once
-        networkSelect.addListener(this); // react when the user selects something
-        networkSelect.setItemCaptionPropertyId("networkName");
+        networkListSelect = new ListSelect("", new NetworkContainer());
+        networkListSelect.setNullSelectionAllowed(false); // user can not 'unselect'
+        networkListSelect.setMultiSelect(false);
+        networkListSelect.setRows(10);
+        networkListSelect.setWidth(100, Sizeable.UNITS_PERCENTAGE);
+        //networkListSelect.select(networks.get(0)); // select this by default
+        networkListSelect.setImmediate(true); // send the change to the server at once
+        networkListSelect.addListener(this); // react when the user selects something
+        networkListSelect.setItemCaptionPropertyId("networkName");
 
-        layout1.addComponent(networkSelect);
-        layout1.setExpandRatio(networkSelect, 1.0f);
+        layout1.addComponent(networkListSelect);
+        layout1.setExpandRatio(networkListSelect, 1.0f);
 
         Panel p1 = new Panel();
         p1.setSizeFull();
@@ -179,7 +233,7 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
 
             @Override
             public void buttonClick(Button.ClickEvent event) {
-                NetworkContainer nc = ((NetworkContainer) networkSelect.getContainerDataSource());
+                NetworkContainer nc = ((NetworkContainer) networkListSelect.getContainerDataSource());
                 nc.sort(i % 2 == 0);
                 i++;
             }
