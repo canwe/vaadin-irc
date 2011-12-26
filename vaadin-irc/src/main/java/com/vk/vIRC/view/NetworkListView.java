@@ -5,6 +5,7 @@ import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.terminal.Sizeable;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
+import com.vk.Strings;
 import com.vk.vIRC.DisconnectFirstException;
 import com.vk.vIRC.MainApplication;
 import com.vk.vIRC.client.IRCClient;
@@ -132,8 +133,8 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
 
                     MainApplication.getCurrent().setIrcClientRef(
                             new IRCClient(
-                                    "irc.chatjunkies.org",
-                                    6667,
+                                    selectedItem.getNextServer(),
+                                    selectedItem.getServerPort(),
                                     "075561",
                                     "gnusmas",
                                     "gnusmas",
@@ -281,7 +282,10 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
     public static class NetworkItem implements Comparable<NetworkItem> {
 
         private String networkName;
+        private int port = 6667;
+        private String host = "";
         private String[] servers;
+        private int serverIndex = 0;
 
         public NetworkItem(String networkName, String[] servers) {
             this.networkName = networkName;
@@ -302,6 +306,51 @@ public class NetworkListView extends AbstractView implements Property.ValueChang
 
         public void setServers(String[] servers) {
             this.servers = servers;
+        }
+
+        public String getNextServer() {
+            String[] hosts = getServers();
+            String host;
+            if (hosts == null || hosts.length == 0) {
+                host = "";
+            } else {
+                host = hosts[serverIndex % hosts.length];
+                serverIndex ++ ;
+            }
+            this.host = host;
+            return host;
+        }
+
+        public int getServerPort(String serverName) {
+            int slashIndex = serverName.lastIndexOf('/');
+            if (slashIndex == -1) slashIndex = serverName.lastIndexOf('\\');
+            if (slashIndex == -1) return port;
+            String sPort = serverName.substring(slashIndex + 1);
+            try {
+                return Integer.parseInt(sPort);
+            } catch (NumberFormatException nfe) {
+                //;
+            }
+            return port;
+        }
+
+        public int getServerPort() {
+            if (Strings.isEmpty(this.host)) return port;
+            int slashIndex = this.host.lastIndexOf('/');
+            if (slashIndex == -1) slashIndex = this.host.lastIndexOf('\\');
+            if (slashIndex == -1) return port;
+            String sPort = this.host.substring(slashIndex + 1);
+            try {
+                return Integer.parseInt(sPort);
+            } catch (NumberFormatException nfe) {
+                //;
+            }
+            return port;
+        }
+
+        @Override
+        public String toString() {
+            return networkName;
         }
 
         @Override
